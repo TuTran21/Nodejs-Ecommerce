@@ -28,6 +28,10 @@ exports.getAdminPage = (req, res) => {
   );
 };
 
+const searchInput = value => {
+  console.log(value);
+};
+
 const navigation = async () => {
   return (navigationLinks = {
     admin: "/admin",
