@@ -11,6 +11,13 @@ var searchRouter = require("./routes/search");
 
 var app = express();
 
+// DB mongoose
+const mongoose = require("mongoose");
+const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
+
+mongoose.connect(MONGO_URI).then(() => {
+  console.log("connection to db successfully!");
+});
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
