@@ -3,16 +3,15 @@ const Schema = mongoose.Schema;
 // Define schema with supported data type
 const UserSchema = new Schema({
   avatar: String,
-  firstName: {
-    type: String,
-    required: true
-  },
+  firstName: String,
   lastName: String,
   dob: Date,
   gender: String,
   email: String,
   isEmailValidate: Boolean,
-  roles: [String]
+  roles: [String],
+  password: String,
+  inCart: []
 });
 
 UserSchema.virtual("fullName")
@@ -32,7 +31,6 @@ UserSchema.index({ email: 1 });
 
 const User = mongoose.model("User", UserSchema);
 User.createIndexes(err => {
-  console.log("ENSURE INDEX");
   if (err) {
     console.log(err);
   }

@@ -1,23 +1,24 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const flash = require("connect-flash");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var adminRouter = require("./routes/admin");
-var searchRouter = require("./routes/search");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const adminRouter = require("./routes/admin");
+const searchRouter = require("./routes/search");
+const registerRouter = require("./routes/register");
+const loginRouter = require("./routes/login");
 
-var app = express();
+const app = express();
 
 // DB mongoose
 const mongoose = require("mongoose");
 const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
 
-mongoose.connect(MONGO_URI).then(() => {
-  console.log("connection to db successfully!");
-});
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -28,9 +29,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  session({
+    cookie: { maxAge: 60000 },
+    secret: "woot",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+app.use(flash());
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
+app.use("/register", registerRouter);
+
+app.use("/login", loginRouter);
+
 app.get("/search", searchRouter);
 
 // app.get("/search", (req, res) => {
@@ -51,6 +66,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+mongoose.connect(MONGO_URI).then(() => {
+  console.log("Connected");
 });
 
 module.exports = app;

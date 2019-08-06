@@ -2,373 +2,510 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>{{title}}</title>
-
-  <!-- Custom fonts for this template-->
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="image/favicon.png" rel="icon" type="image/png">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel='stylesheet' href='css/style.css' />
-
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <link href="css/stylesheet.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <link href="js/owl-carousel/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
+  <link href="js/owl-carousel/owl.transitions.css" type="text/css" rel="stylesheet" media="screen" />
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/template_js/jstree.min.js"> </script>
+  <script src="js/template_js/template.js">
+  </script>
+  <script src="js/common.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.parallax.js"></script>
 </head>
 
-<body id="page-top">
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 sticky-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
-            action="/search" method="POST">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                      aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
+<body class="index">
+  {{!-- <div class="preloader loader" style="display: block;"> <img src="img/loader.gif" alt="#" /></div> --}}
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="top-left pull-left">
+              <div class="language">
+                <form action="#" method="post" enctype="multipart/form-data" id="language">
+                  <div class="btn-group">
+                    <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> English
+                      <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Arabic</a></li>
+                      <li><a href="#"> English</a></li>
+                    </ul>
                   </div>
                 </form>
               </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
+              <div class="currency">
+                <form action="#" method="post" enctype="multipart/form-data" id="currency">
+                  <div class="btn-group">
+                    <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"> <strong>USD</strong> <span
+                        class="caret"></span> </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Euro</a></li>
+                      <li><a href="#">Pound</a></li>
+                      <li><a href="#">USD</a></li>
+                    </ul>
                   </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                </form>
               </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
-                      having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them
-                      sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
-                      far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
-                      say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              <div class="wel-come-msg"> Welcome to our online store! </div>
+            </div>
+            <div class="top-right pull-right">
+              <div id="top-links" class="nav pull-right">
+                <ul class="list-inline">
+                  <li class="dropdown"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i
+                        class="fa fa-user" aria-hidden="true"></i><span>My Account</span> <span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li><a href={{registerLink}}>Register</a></li>
+                      <li><a href={{loginLink}}>Login</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"
+                        aria-hidden="true"></i><span>Wish List</span><span> (0)</span></a></li>
+                </ul>
               </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tu Tran</span>
-                <img class="img-profile rounded-circle" src="./img/profile.jpg">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <a href={{usersLink}} class="col-md-4 mb-4">
-              <div class="card border-left-primary h-100 py-2 card-link">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{usersAmountTitle}}</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{usersAmount}}</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <a href={{productsLink}} class="col-md-4 mb-4">
-              <div class="card border-left-success h-100 py-2 card-link">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{productsAmountTitle}}
-                      </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{productsAmount}}</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <a href={{adminLink}} class="col-md-4 mb-4">
-              <div class="card border-left-info h-100 py-2 card-link">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">{{categoriesAmountTitle}}
-                      </div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{categoriesAmount}}</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
-                              aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-          <!-- /.container-fluid -->
-
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Phoenix 2019</span>
             </div>
           </div>
-        </footer>
-        <!-- End of Footer -->
-
+        </div>
       </div>
-      <!-- End of Content Wrapper -->
-
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+    <div class="container">
+      <div class="header-inner">
+        <div class="col-sm-3 col-xs-3 header-left">
+          <div id="logo"> <a href={{indexLink}}><img src="img/logo.png" title="E-Commerce" alt="E-Commerce"
+                class="img-responsive" /></a> </div>
+        </div>
+        <div class="col-sm-9 col-xs-9 header-right">
+          <div id="search" class="input-group">
+            <input type="text" name="search" value="" placeholder="Enter your keyword ..."
+              class="form-control input-lg" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-lg"><span>Search</span></button>
+            </span> </div>
+          <div id="cart" class="btn-group btn-block">
+            <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"> <span
+                id="cart-total"><span>Shopping Cart</span><br>
+                3 item(s) - $254.00</span></button>
+            <ul class="dropdown-menu pull-right cart-dropdown-menu">
+              <li>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td class="text-center"><a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                            alt="lorem ippsum dolor dummy" src="img/product/7product56x72.jpg"></a></td>
+                      <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
+                      <td class="text-right">x 1</td>
+                      <td class="text-right">$254.00</td>
+                      <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i
+                            class="fa fa-times"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td class="text-center"><a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                            alt="lorem ippsum dolor dummy" src="img/product/7product56x72.jpg"></a></td>
+                      <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
+                      <td class="text-right">x 1</td>
+                      <td class="text-right">$254.00</td>
+                      <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i
+                            class="fa fa-times"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td class="text-center"><a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                            alt="lorem ippsum dolor dummy" src="img/product/7product56x72.jpg"></a></td>
+                      <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
+                      <td class="text-right">x 1</td>
+                      <td class="text-right">$254.00</td>
+                      <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i
+                            class="fa fa-times"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <div>
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td class="text-right"><strong>Sub-Total</strong></td>
+                        <td class="text-right">$210.00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                        <td class="text-right">$2.00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                        <td class="text-right">$42.00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-right"><strong>Total</strong></td>
+                        <td class="text-right">$254.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="text-right"> <span class="btn-viewcart"><a href="cart"><strong><i
+                            class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a
+                        href="checkout"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  </header>
+  <nav id="menu" class="navbar">
+    <div class="nav-inner">
+      <div class="navbar-header"><span id="category" class="visible-xs">Categories</span>
+        <button type="button" class="btn btn-navbar navbar-toggle"><i class="fa fa-bars"></i></button>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="main-navigation">
+          <li><a href="index" class="parent">Home</a> </li>
+          <li><a href="category" class="parent">Collection</a> </li>
+          <li><a href="category" class="parent">Women</a> </li>
+          <li><a href="category" class="parent">Men</a> </li>
+          <li><a href="#" class="active parent">Page</a>
+            <ul>
+              <li><a href="category">Category Page</a></li>
+              <li><a href="cart">Cart Page</a></li>
+              <li><a href="checkout">Checkout Page</a></li>
+              <li><a href="blog">Blog Page</a></li>
+              <li><a href="single-blog">Singale Blog Page</a></li>
+              <li><a href="register">Register Page</a></li>
+              <li><a href="contact">Contact Page</a></li>
+              <li><a href="affiliate">Affiliate</a></li>
+              <li><a href="forgetpassword">Forget Password</a></li>
+            </ul>
+          </li>
+          <li><a href="blog" class="parent">Blog</a></li>
+          <li><a href="about-us">About us</a></li>
+          <li><a href="contact">Contact Us</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="mainbanner">
+    <div id="main-banner" class="owl-carousel home-slider">
+      <div class="item"> <a href="#"><img src="img/banners/Main-Banner1.jpg" alt="main-banner1"
+            class="img-responsive" /></a> </div>
+      <div class="item"> <a href="#"><img src="img/banners/Main-Banner2.jpg" alt="main-banner2"
+            class="img-responsive" /></a> </div>
+      <div class="item"> <a href="#"><img src="img/banners/Main-Banner3.jpg" alt="main-banner3"
+            class="img-responsive" /></a> </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="cms_banner">
+        <div class="col-xs-12 col-md-6">
+          <div id="subbanner1" class="banner sub-hover">
+            <a href="#"><img src="img/banners/subbanner1.jpg" alt="Sub Banner1" class="img-responsive"></a>
+            <div class="bannertext">
+              <h2>wonem online</h2>
+              <p>Shop New Season Clothing</p>
+              <button class="btn">Shop Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div id="subbanner2" class="banner sub-hover">
+            <a href="#"><img src="img/banners/subbanner2.jpg" alt="Sub Banner2" class="img-responsive"></a>
+            <div class="bannertext">
+              <h2>Accessories </h2>
+              <p>Get Wide Range Selection</p>
+              <button class="btn">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="center">
+    <div class="container">
+      <div class="row">
+        <div class="content col-sm-12">
+          <div class="customtab">
+            <h3 class="productblock-title">For Your Best Look</h3>
+          </div>
+          <!-- tab-furniture-->
+          <div id="tab-furnitur" class="tab-content">
+            <div class="row">
+              {{#each products }}
+              <div class="product-layout  product-grid  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="item " {{ categoryId }}>
+                  <div class=" product-thumb">
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <div class="image product-imageblock"> <a href="product"> <img src="{{image}}"
+                          alt="an image of {{name}}" class="img-responsive" /> <img src="{{thumbnail}}"
+                          alt="an image of {{name}}" class="img-responsive" /> </a>
+                      <ul class="button-group">
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                        <li>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+                          <a href="/admin/products/{{_id}}" class="btn btn-primary"
+                            style="display: inline; height: 45px;" title="Quick View"><i class="fa fa-eye"></i></a>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+                        </li>
+                        <li>
+                          <button type="button" class="addtocart-btn" title="Add to Cart"> Add to Cart </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="caption product-detail">
+                      <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i
+                            class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i
+                            class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span
+                          class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i
+                            class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i
+                            class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span
+                          class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                      <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{ name }}</a>
+                      </h4>
+                      <p class="price product-price">{{ salePrice }}<span class="price-tax">{{
+                          originalPrice
+                        }}</span></p>
+                    </div>
+                  </div>
+                </div>
 
+              </div>
+              {{/each }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tab-living-->
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="img/prlx.jpg" alt="#"></div>
+
+    <div class="container">
+      <ul id="testimonial" class="row owl-carousel product-slider">
+        {{#each users}}
+        <li class="item">
+          <div class="panel-default">
+            <div class="testimonial-image z-depth-5"><img src="{{avatar}}" alt="{{lastName}} {{firstName}}"></div>
+            <div class="testimonial-name ">
+              <h2 class="text-white">{{firstName}} {{lastName}}</h2>
+            </div>
+            <div class="testimonial-designation">
+              <p>{{role}}</p>
+            </div>
+            <a class="btn btn-primary" href="/admin/users/{{ _id }}">Details</a>
+            <div class="testimonial-desc text-white">Rem ipsum doLoremRem ipsum doLorem ipsum ipsum doLorem ipsum ut
+              labore et
+              dolore ma ipsum ut labore etdolore ipsum doLorem ipsum ut labore et dolore mamagna. Lorem ipsumut labore
+              et dolore mamagna. Lorem ipsum doLorem ipsum dolor sit amet, consectetur adipisicing.</div>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="footer-top-cms parallax-container">
+    <div class="parallax"><img src="img/news.jpg" alt="#"></div>
+    <div class="container">
+      <div class="row">
+        <div class="newslatter">
+          <form>
+            <h5>SIGN UP FOR OUR DISCOUNTS TODAY!</h5>
+            <h4 class="title-subline">Be sure to follow our blog and sign up for all of our mailing updates!</h4>
+            <div class="input-group">
+              <input type="text" class=" form-control" placeholder="Your-email@website.com">
+              <button type="submit" value="Sign up" class="btn btn-large btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li class="gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="client-title">Favourite Brands</h3>
+    <h4 class="title-subline">The High Quality Products</h4>
+    <div id="brand_carouse" class="owl-carousel brand-logo">
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand1.png" alt="Disney"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand2.png" alt="Dell"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand3.png" alt="Harley"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand4.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand5.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand6.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand7.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand8.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand9.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+      <div class="item text-center"> <a href="#"><img src="img/brand/brand5.png" alt="Canon"
+            class="img-responsive" /></a> </div>
+    </div>
+  </div>
+  <footer>
+    <div class="cms_searvice">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 ">
+            <div class="cms-block1 z-depth-5">
+              <h4>Free Shipping</h4>
+              <p>All order over $150</p>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="cms-block2">
+              <h4>30 Days Returns</h4>
+              <p>Money Back Guarantee</p>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="cms-block3">
+              <h4>24/7 Support</h4>
+              <p>Feel free to Contact us</p>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="cms-block4">
+              <h4>Online Shopping </h4>
+              <p>Save Up to 70% on Store</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 footer-block">
+          <h5 class="footer-title">INFORMATION</h5>
+          <ul class="list-unstyled ul-wrapper">
+            <li><a href="contact">About Us</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Wish List</a></li>
+            <li><a href="#">Gift Certificates</a></li>
+            <li><a href="#">View Cart</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Specials</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 footer-block">
+          <h5 class="footer-title">MY ACCOUNT</h5>
+          <ul class="list-unstyled ul-wrapper">
+            <li><a href="contact">Contact Us</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Wish List</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Gift Certificates</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Specials</a></li>
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 footer-block">
+          <h5 class="footer-title">Extras</h5>
+          <ul class="list-unstyled ul-wrapper">
+            <li><a href="#">Delivery information</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Product Recall</a></li>
+            <li><a href="#">Gift Vouchers</a></li>
+            <li><a href="#">Help & FAQs</a></li>
+            <li><a href="#">Sale Only Today</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 footer-block">
+          <div class="content_footercms_right">
+            <div class="footer-contact">
+              <h5 class="contact-title footer-title">Contact Us</h5>
+              <ul class="ul-wrapper">
+                <li><i class="fa fa-map-marker"></i><span class="location2">Offices Addresss:<br>
+                    218,Drimlend Building<br>
+                    Sarthana jakatnaka, Surat City <br>
+                    Gujarat-395013 INDIA</span></li>
+                <li><i class="fa fa-envelope"></i><span class="mail2"><a href="#">info@localhost.com</a><br>
+                    <a href="#">your@domain.com</a></span></li>
+                <li><i class="fa fa-mobile"></i><span class="phone2">+91 0987-654-321<br>
+                    +91 0987-654-321</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div id="bottom-footer">
+        <ul class="footer-link">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="copyright"> Copyright - <a class="yourstore" href="http://www.lionode.com/"> Created by Lionode
+            &copy; 2017 </a></div>
+        <div class="footer-bottom-cms">
+          <div class="footer-payment">
+            <ul>
+              <li class="mastero"><a href="#"><img alt="" src="img/payment/mastero.jpg"></a></li>
+              <li class="visa"><a href="#"><img alt="" src="img/payment/visa.jpg"></a></li>
+              <li class="currus"><a href="#"><img alt="" src="img/payment/currus.jpg"></a></li>
+              <li class="discover"><a href="#"><img alt="" src="img/payment/discover.jpg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id="scrollup">Scroll</a>
+  </footer>
+
+  <script>
+    jQuery(document).ready(function ($) {
+      $('.parallax').parallax();
+    });
+  </script>
 </body>
 
 </html>

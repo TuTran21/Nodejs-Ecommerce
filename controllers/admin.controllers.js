@@ -1,6 +1,3 @@
-const usersData = require("../data/users.json");
-const productsData = require("../data/products.json");
-const categoriesData = require("../data/categories.json");
 // models
 const ProductModel = require("../models/product");
 const UserModel = require("../models/user");
@@ -36,7 +33,7 @@ const searchInput = value => {
   console.log(value);
 };
 
-const navigation = async () => {
+const navigation = () => {
   return (navigationLinks = {
     admin: "/admin",
     users: "/admin/users",
@@ -44,7 +41,7 @@ const navigation = async () => {
   });
 };
 
-const getUsers = async () => {
+const getUsers = () => {
   const users = UserModel.find({})
     .limit(50)
     .exec()
@@ -54,7 +51,7 @@ const getUsers = async () => {
   return users;
 };
 
-const getProducts = async () => {
+const getProducts = () => {
   const products = ProductModel.find({})
     .limit(50)
     .exec()
@@ -64,7 +61,7 @@ const getProducts = async () => {
   return products;
 };
 
-const getCategories = async () => {
+const getCategories = () => {
   const categories = CategoryModel.find({})
     .limit(50)
     .exec()
@@ -120,7 +117,7 @@ exports.getProductDetails = (req, res) => {
   );
 };
 
-const getProductDetails = async reqId => {
+const getProductDetails = reqId => {
   const productById = ProductModel.findById(reqId, function(err, product) {
     return product;
   });
@@ -142,7 +139,7 @@ exports.getUserDetails = (req, res) => {
   );
 };
 
-const getUserDetails = async reqId => {
+const getUserDetails = reqId => {
   const userById = UserModel.findById(reqId, function(err, user) {
     return user;
   });
