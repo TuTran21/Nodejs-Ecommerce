@@ -18,7 +18,7 @@ const app = express();
 
 // DB mongoose
 
-// const uri = "mongodb+srv://:admin123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
 // client.connect(err => {
 //   const collection = client.db("test").collection("devices");
@@ -26,9 +26,10 @@ const app = express();
 //   client.close();
 // });
 const mongoose = require("mongoose");
-const {
-  MONGO_URI = "mongodb+srv://:admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority"
-} = process.env;
+// const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
+// const { MONGO_URI = "mongodb+srv://admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority" } = process.env;
+const MONGO_URI =
+  "mongodb+srv://admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority";
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

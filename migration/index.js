@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
+// const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
+const MONGO_URI =
+  "mongodb+srv://admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority";
 
 const Product = require("../models/product");
 const Category = require("../models/category");
