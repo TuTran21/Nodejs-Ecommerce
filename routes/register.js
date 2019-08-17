@@ -1,10 +1,6 @@
 var express = require("express");
 var router = express.Router();
 const RegisterController = require("../controllers/registerLogin.controllers");
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
 
 const multer = require("multer");
 const cloudinary = require("cloudinary");
@@ -24,7 +20,6 @@ const storage = cloudinaryStorage({
 const parser = multer({ storage: storage });
 
 router.get("/", RegisterController.getRegisterPage);
-// router.post("/", RegisterController.register);
 
 router.post("/", parser.single("avatar"), RegisterController.register);
 

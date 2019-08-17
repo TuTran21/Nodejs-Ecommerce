@@ -66,12 +66,21 @@ exports.register = async (req, res, next) => {
     // const parser = await multerCloudinaryConfig();
     // parser.single(req.body.avatar);
     // Save User
-    const resultUser = { ...result.value, avatar: req.file.url };
-    const newUser = await new UserModel(resultUser);
-    await newUser.save();
+    if (req.file) {
+      const resultUser = { ...result.value, avatar: req.file.url };
+      const newUser = await new UserModel(resultUser);
+      await newUser.save();
 
-    console.log("success");
-    res.redirect("/login");
+      console.log("success");
+      res.redirect("/login");
+    } else {
+      const resultUser = { ...result.value, avatar: req.file.url };
+      const newUser = await new UserModel(resultUser);
+      await newUser.save();
+
+      console.log("success");
+      res.redirect("/login");
+    }
   } catch (error) {
     next(error);
   }

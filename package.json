@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "seed-data": "node migration/index.js"
+    "seed-data": "node migration/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "cloudinary": "^1.14.0",

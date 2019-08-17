@@ -12,12 +12,23 @@ const adminRouter = require("./routes/admin");
 const searchRouter = require("./routes/search");
 const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
+const MongoClient = require("mongodb").MongoClient;
 
 const app = express();
 
 // DB mongoose
+
+// const uri = "mongodb+srv://:admin123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 const mongoose = require("mongoose");
-const { MONGO_URI = "mongodb://localhost:27017/basic-nodejs" } = process.env;
+const {
+  MONGO_URI = "mongodb+srv://:admin:123@basicnodejs-d6le8.mongodb.net/test?retryWrites=true&w=majority"
+} = process.env;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
