@@ -3,7 +3,7 @@ Nodejs structured Ecommerce (using html server-side rendering)
 
 Visit flow:
 
-   Register: 
+    Register: 
 
       _Success: you will be taken to login page
 
@@ -21,20 +21,20 @@ Visit flow:
 
 Features:
 
-   _Register and Login
+    _Register and Login
 
-   _Cloudinary image storage
+    _Cloudinary image storage
 
-   _Product Creation
+    _Product Creation
 
-   _Editable Product Details
+    _Editable Product Details
 
-   _User Creation
+    _User Creation
 
 Undergoing Features:
 
-   _Editable User Details
+    _Editable User Details
 
-   _Unit Testing
+    _Unit Testing
 
-   _Shopping Cart for homepage
+    _Shopping Cart for homepage
