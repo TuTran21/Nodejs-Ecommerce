@@ -369,7 +369,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">{{title}} Dashboard</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                class="fas fa-download fa-sm text-white-50"></i> Edit Details</a>
           </div>
 
           <!-- Content Row -->
@@ -385,55 +385,85 @@
               <div class="panel panel-default">
                 <div class="panel-heading">Product details</div>
                 <div class="panel-body">
-                  <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Short Description</th>
-                        <th>CategoryId</th>
-                        <th>Sale Price</th>
-                        <th>Original Price</th>
-                        <th>Thumbnail</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>{{ product._id }}</td>
-                        <td>{{ product.name }}</td>
-                        <td><img src="{{product.image}}" alt="{{product.name}}" width="100"></td>
-                        <td>{{ product.shortDescription }}</td>
-                        <td>{{ product.categoryId }}</td>
-                        <td>{{ product.salePrice }}</td>
-                        <td>{{ product.originalPrice }}</td>
-                        <td><img src="{{product.thumbnail}}" alt="{{product.name}}" width="100"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                      <tr>
-                        <th>Images</th>
-                        <th>Thumbnails</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          {{#each product.images}}
-                          <img src="{{this}}" alt="{{product.name}}" width="100">
-                          {{/each}}
-                        </td>
+                  <form action="" method="post" enctype="multipart/form-data" id="language">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Image</th>
+                          <th>Short Description</th>
+                          <th>CategoryId</th>
+                          <th>Sale Price</th>
+                          <th>Original Price</th>
+                          <th>Thumbnail</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{ product._id }}</td>
+                          <td>{{ product.name }}
+                            <input type="text" class="form-control bg-light border-0 small productDetailsInput"
+                              placeholder="Product name" aria-label="productCreate" name="name"
+                              aria-describedby="basic-addon2" value={{product.name}}>
+                          </td>
+                          <td><img src="{{product.image}}" alt="{{product.name}}" width="100"> <input type="file"
+                              id="productImage" name="image" class="form-control-file border" value={{product.image}}>
+                          </td>
+                          <td>{{ product.shortDescription }}
+                            <input type="text" class="form-control bg-light border-0 small productDetailsInput"
+                              placeholder="Product's short description" aria-label="productCreate"
+                              name="shortDescription" aria-describedby="basic-addon2"
+                              value={{product.shortDescription}}>
+                          </td>
+                          <td>{{ product.categoryId }}
+                            {{#each categories }}
+                            <select name="categoryId" class="productDetailsInput" value={{product.categoryId}}></select>
+                            <option value={{name}}>{{name}}</option>
+                            {{/each }}
+                          </td>
+                          <td>{{ product.salePrice }}
+                            <input type="number" class="form-control bg-light border-0 small productDetailsInput"
+                              placeholder="Product's Sale Price" aria-label="productSalePrice" name="salePrice"
+                              aria-describedby="basic-addon2" value={{product.salePrice}}>
+                          </td>
+                          <td>{{ product.originalPrice }}
+                            <input type="number" class="form-control bg-light border-0 small productDetailsInput"
+                              placeholder="Product's Original Price" aria-label="productOriginalPrice"
+                              name="originalPrice" aria-describedby="basic-addon2" value={{product.originalPrice}}>
+                          </td>
+                          <td><img src="{{product.thumbnail}}" alt="{{product.name}}" width="100">
+                            <input type="file" id="productThumbnail" name="thumbnail" value={{product.thumbnail}}
+                              class="form-control-file border">
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                      <thead>
+                        <tr>
+                          <th>Images</th>
+                          <th>Thumbnails</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            {{#each product.images}}
+                            <img src="{{this}}" alt="{{product.name}}" width="100">
+                            {{/each}}
+                          </td>
 
-                        <td>
-                          {{#each product.thumbnails}}
-                          <img src="{{this}}" alt="{{product.name}}" width="100">
-                          {{/each}}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          <td>
+                            {{#each product.thumbnails}}
+                            <img src="{{this}}" alt="{{product.name}}" width="100">
+                            {{/each}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <input type="submit" class="btn btn-primary" id={{product._id}} value="Submit product details">
+                  </form>
                 </div>
               </div>
 

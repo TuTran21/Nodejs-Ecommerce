@@ -87,15 +87,16 @@ exports.getAdminUsersPage = (req, res) => {
 
 // Products
 exports.getAdminProductsPage = (req, res) => {
-  Promise.all([getProducts(), navigation()]).then(
-    ([products, navigationLinks]) => {
+  Promise.all([getProducts(), getCategories(), navigation()]).then(
+    ([products, categories, navigationLinks]) => {
       res.render("products", {
         title: "Phoenix - Products",
         adminLink: navigationLinks.admin,
         usersLink: navigationLinks.users,
         productsLink: navigationLinks.products,
 
-        products: products
+        products: products,
+        categories: categories
       });
     }
   );
@@ -122,6 +123,45 @@ const getProductDetails = reqId => {
     return product;
   });
   return productById;
+};
+
+exports.updateProductDetails = (req, res) => {
+  Promise.all([getProductDetails(req.params.id)])
+    .then(([productById]) => {
+      var newProduct = {
+        productById,
+        ...req.body
+      };
+
+      if (req.files.length > 0) {
+        const imgUrl = req.files[0].url;
+        const thumbnailUrl = req.files[1].url;
+        newProduct = {
+          newProduct,
+          image: imgUrl,
+          thumbnail: thumbnailUrl,
+          thumbnails: [thumbnailUrl],
+          images: [imgUrl]
+        };
+      }
+
+      const query = { _id: req.params.id };
+      ProductModel.findOneAndUpdate(query, newProduct, function(err) {
+        console.log(newProduct);
+        if (err) {
+          console.log(err);
+          res.redirect("/admin/products/");
+          res.status(500, { error: err });
+          return;
+        } else {
+          return res.redirect("/admin/products/" + req.params.id);
+        }
+      });
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(error, "Promise error");
+    });
 };
 // User Details
 exports.getUserDetails = (req, res) => {

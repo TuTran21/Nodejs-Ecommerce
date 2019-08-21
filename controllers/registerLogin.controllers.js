@@ -52,7 +52,7 @@ exports.register = async (req, res, next) => {
   try {
     const result = Joi.validate(req.body, userSchema);
     if (result.error) {
-      console.log("error");
+      console.log("error: ", result.error);
       res.redirect("/register");
       return;
     }
@@ -63,17 +63,8 @@ exports.register = async (req, res, next) => {
       res.redirect("/register");
       return;
     }
-    // const parser = await multerCloudinaryConfig();
-    // parser.single(req.body.avatar);
-    // Save User
-    if (req.file) {
-      const resultUser = { ...result.value, avatar: req.file.url };
-      const newUser = await new UserModel(resultUser);
-      await newUser.save();
 
-      console.log("success");
-      res.redirect("/login");
-    } else {
+    if (req.file) {
       const resultUser = { ...result.value, avatar: req.file.url };
       const newUser = await new UserModel(resultUser);
       await newUser.save();
@@ -120,7 +111,7 @@ exports.login = async (req, res, next) => {
     });
     if (user) {
       console.log("success");
-      res.redirect("/");
+      res.redirect("/admin");
       return;
     } else {
       res.redirect("/login");
