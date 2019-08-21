@@ -21,20 +21,20 @@ Visit flow:
 
 Features:
 
-   Register and Login
+   _Register and Login
 
-   Cloudinary image storage
+   _Cloudinary image storage
 
-   Product Creation
+   _Product Creation
 
-   Editable Product Details
+   _Editable Product Details
 
-   User Creation
+   _User Creation
 
 Undergoing Features:
 
-   Editable User Details
+   _Editable User Details
 
-   Unit Testing
+   _Unit Testing
 
-   Shopping Cart for homepage
+   _Shopping Cart for homepage
